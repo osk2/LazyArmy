@@ -1,5 +1,6 @@
 package osk2.lazyarmy;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -38,8 +39,11 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "不要亂按我會癢", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                Snackbar.make(view, "不要亂按我會癢", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, AddReportActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -48,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             RowItem item = new RowItem(images[i], titles[i], descriptions[i]);
             rowItems.add(item);
         }
-        listView = (ListView) findViewById(R.id.list);
+        listView = (ListView) findViewById(R.id.dummy_list);
         CustomBaseAdapter adapter = new CustomBaseAdapter(this, rowItems);
         listView.setAdapter(adapter);
     }
@@ -69,10 +73,11 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Snackbar.make(findViewById(android.R.id.content), "不要亂按我會癢", Snackbar.LENGTH_LONG).
+            setAction("Action", null).show();
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
-
 
 }
