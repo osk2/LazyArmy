@@ -16,7 +16,7 @@ public class RowItem {
     public void setImageId(int imageId) {
         this.imageId = imageId;
     }
-    public String getDesc() {
+    public String getDetail() {
         return desc;
     }
     public void setDesc(String desc) {

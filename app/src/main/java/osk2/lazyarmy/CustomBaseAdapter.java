@@ -32,7 +32,7 @@ public class CustomBaseAdapter extends BaseAdapter {
         LayoutInflater mInflater = (LayoutInflater)
                 context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.content_main, null);
+            convertView = mInflater.inflate(R.layout.report_list, null);
             holder = new ViewHolder();
             holder.imageView = (ImageView) convertView.findViewById(R.id.profile_thumb);
             holder.txtTitle = (TextView) convertView.findViewById(R.id.title_label);
@@ -45,8 +45,8 @@ public class CustomBaseAdapter extends BaseAdapter {
 
         RowItem rowItem = (RowItem) getItem(position);
 
-        holder.txtDetail.setText(rowItem.getDesc());
         holder.txtTitle.setText(rowItem.getTitle());
+        holder.txtDetail.setText(rowItem.getDetail());
         holder.imageView.setImageResource(rowItem.getImageId());
 
         return convertView;

@@ -51,7 +51,7 @@ public class ListAdapter extends BaseAdapter {
         ViewHolder holder = (ViewHolder) convertView.getTag();
         RowItem rowItem = (RowItem) getItem(position);
 
-        holder.txtDetail.setText(rowItem.getDesc());
+        holder.txtDetail.setText(rowItem.getDetail());
         holder.txtTitle.setText(rowItem.getTitle());
         holder.imageView.setImageResource(rowItem.getImageId());
 
