@@ -28,4 +28,16 @@
 造是法沒另因怕德經能河童美未象意速建行花委有內一放起國得一石再名他才這長手要星業影還此支幾行多了興上以沒活導落不算代媽。"
     </string>
     <string name="action_settings">設定</string>
+    <string name="name">名稱</string>
+    <string name="ok">確定</string>
+    <string name="cancel">取消</string>
+    <string name="time_pm">下午</string>
+    <string name="time_am">上午</string>
+    <string name="display_image">顯示圖</string>
+    <string name="time_picker_hint">選擇時間</string>
+    <string name="report_time">回報時間</string>
+    <string name="report_time_range">回報時間區間</string>
+    <string name="report_content">回報內容</string>
+    <string name="report_method">回報方式</string>
+    <string name="report_method_sms">簡訊</string>
 </resources>

@@ -1,105 +1,272 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_margin="5dp">
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollView"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <com.rengwuxian.materialedittext.MaterialEditText
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="名稱"
-        app:met_floatingLabel="highlight"
-        android:layout_margin="5dp"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="顯示圖" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_margin="5dp"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/name" />
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-
-        <LinearLayout
-            android:orientation="horizontal"
+        <EditText
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:hint="@string/name" />
 
-            <ImageButton
+        <!--<com.rengwuxian.materialedittext.MaterialEditText-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="@string/name"-->
+            <!--app:met_floatingLabel="highlight" />-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_margin="5dp"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/display_image" />
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/man_1"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:padding="3dp"
-                android:background="?attr/selectableItemBackground" />
+                android:layout_height="55dp">
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/man_6"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:padding="3dp"
-                android:background="?attr/selectableItemBackground" />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/batman"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:padding="3dp"
+                    android:background="?attr/selectableItemBackground" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/man_14"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:padding="3dp"
-                android:background="?attr/selectableItemBackground" />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/boss_2"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:padding="3dp"
+                    android:background="?attr/selectableItemBackground" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/man_16"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:padding="3dp"
-                android:background="?attr/selectableItemBackground" />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/burglar"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:padding="3dp"
+                    android:background="?attr/selectableItemBackground" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/woman_9"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:padding="3dp"
-                android:background="?attr/selectableItemBackground" />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/chef_2"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:padding="3dp"
+                    android:background="?attr/selectableItemBackground" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/soldier_3"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:padding="3dp"
-                android:background="?attr/selectableItemBackground" />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/farmer"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:padding="3dp"
+                    android:background="?attr/selectableItemBackground" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/hacker"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:padding="3dp"
-                android:background="?attr/selectableItemBackground" />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/hacker"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:padding="3dp"
+                    android:background="?attr/selectableItemBackground" />
 
-        </LinearLayout>
-    </ScrollView>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/magician"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:padding="3dp"
+                    android:background="?attr/selectableItemBackground" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/man_1"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:padding="3dp"
+                    android:background="?attr/selectableItemBackground" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/man_6"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:padding="3dp"
+                    android:background="?attr/selectableItemBackground" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ninja"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:padding="3dp"
+                    android:background="?attr/selectableItemBackground" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/rapper_2"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:padding="3dp"
+                    android:background="?attr/selectableItemBackground" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/road_worker_1"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:padding="3dp"
+                    android:background="?attr/selectableItemBackground" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/rocker"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:padding="3dp"
+                    android:background="?attr/selectableItemBackground" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/soldier_3"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:padding="3dp"
+                    android:background="?attr/selectableItemBackground" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/student"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:padding="3dp"
+                    android:background="?attr/selectableItemBackground" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/surgeon"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:padding="3dp"
+                    android:background="?attr/selectableItemBackground" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/woman_9"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:padding="3dp"
+                    android:background="?attr/selectableItemBackground" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_margin="5dp"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/report_time" />
 
 
-</LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/time_picker_hint"
+            android:id="@+id/time_picker_btn"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_margin="5dp"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/report_method" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/report_method_spinner"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_margin="5dp"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/report_content" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:lines="5"
+            android:gravity="top"
+            android:id="@+id/editText" />
+    </LinearLayout>
+
+</ScrollView>
