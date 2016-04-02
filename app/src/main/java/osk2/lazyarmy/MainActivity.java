@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             "於星期五六 21:05 簡訊回報"};
 
     public static final Integer[] images = {R.drawable.man_1,
-            R.drawable.man_6, R.drawable.man_14};
+            R.drawable.man_6, R.drawable.boss_2};
 
     ListView listView;
     List<RowItem> rowItems;
