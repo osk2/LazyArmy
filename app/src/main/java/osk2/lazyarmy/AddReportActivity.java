@@ -1,18 +1,18 @@
 package osk2.lazyarmy;
 
-import android.app.AlertDialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TimePicker;
-
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -20,6 +20,7 @@ public class AddReportActivity extends AppCompatActivity {
 
     String[] strings = { "Red", "Blue", "Green" };
     private TimePickerDialog timePickerDialog;
+    private DBHelper dbhelper = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +30,14 @@ public class AddReportActivity extends AppCompatActivity {
         ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, new String[] {"Line", this.getResources().getString(R.string.report_method_sms)});
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-
         final Button time_picker_btn = (Button)findViewById(R.id.time_picker_btn);
-
+        final Button add_done_btn = (Button)findViewById(R.id.add_done);
+        final Context that = this;
         GregorianCalendar calendar = new GregorianCalendar();
+        EditText name_input =  (EditText)findViewById(R.id.report_name);
+        String name = name_input.getText().toString();
+        final String report_date = "";
+
         timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
             String time_pm = getResources().getString(R.string.time_pm);
             String time_am = getResources().getString(R.string.time_am);
@@ -45,8 +50,9 @@ public class AddReportActivity extends AppCompatActivity {
                 } else {
                     sMinute = String.valueOf(minute);
                 }
-                time_picker_btn.setText((hourOfDay > 12 ? time_pm : time_am) + " " + (hourOfDay > 12 ? hourOfDay - 12 : hourOfDay)
-                        + ":" + sMinute );
+                report_date = (hourOfDay > 12 ? time_pm : time_am) + " " + (hourOfDay > 12 ? hourOfDay - 12 : hourOfDay)
+                        + ":" + sMinute;
+                time_picker_btn.setText(report_date);
             }
         }, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(calendar.MINUTE),
                 false);
@@ -58,12 +64,20 @@ public class AddReportActivity extends AppCompatActivity {
             }
         });
 
+        add_done_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DBHelper sqlitedb = new DBHelper(that);
+                final SQLiteDatabase db = sqlitedb.getWritableDatabase();
+
+            }
+        });
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_add, menu);
         return true;
     }
 
