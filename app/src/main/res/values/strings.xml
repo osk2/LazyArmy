@@ -14,4 +14,6 @@
     <string name="report_method">Report Via</string>
     <string name="report_method_sms">SMS</string>
     <string name="done">Done</string>
+    <string name="report_via_line">Report via LINE</string>
+    <string name="report_via_sms">Report via SMS</string>
 </resources>

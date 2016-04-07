@@ -14,4 +14,6 @@
     <string name="report_method">回報方式</string>
     <string name="report_method_sms">簡訊</string>
     <string name="done">完成</string>
+    <string name="report_via_line">使用LINE回報</string>
+    <string name="report_via_sms">使用簡訊回報</string>
 </resources>

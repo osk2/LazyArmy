@@ -1,6 +1,7 @@
 package osk2.lazyarmy;
 
 import android.app.TimePickerDialog;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -18,9 +19,10 @@ import java.util.GregorianCalendar;
 
 public class AddReportActivity extends AppCompatActivity {
 
-    String[] strings = { "Red", "Blue", "Green" };
     private TimePickerDialog timePickerDialog;
     private DBHelper dbhelper = null;
+    private String report_date = "";
+    private String name = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +37,7 @@ public class AddReportActivity extends AppCompatActivity {
         final Context that = this;
         GregorianCalendar calendar = new GregorianCalendar();
         EditText name_input =  (EditText)findViewById(R.id.report_name);
-        String name = name_input.getText().toString();
-        final String report_date = "";
+        name = name_input.getText().toString();
 
         timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
             String time_pm = getResources().getString(R.string.time_pm);
@@ -68,8 +69,11 @@ public class AddReportActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 DBHelper sqlitedb = new DBHelper(that);
-                final SQLiteDatabase db = sqlitedb.getWritableDatabase();
-
+                SQLiteDatabase db = sqlitedb.getWritableDatabase();
+                ContentValues cv = new ContentValues();
+                cv.put("description", name);
+                cv.put("report_at", report_date);
+                db.insert("report", null, cv);
             }
         });
 

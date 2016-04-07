@@ -22,44 +22,46 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS leader ("
-                        + "lid INTEGER PRIMARY KEY,"
-                        + "name TEXT,"
-                        + "mobile TEXT NOT NULL,"
-                        + "line TEXT,"
-                        + "description TEXT,"
-                        + "timestamp TEXT"
-                        + ")"
-        );
 
         db.execSQL("CREATE TABLE IF NOT EXISTS report ("
                         + "rid INTEGER PRIMARY KEY,"
-                        + "lid INTEGER,"
+                        + "pid INTEGER NOT NULL,"
+                        + "rmid INTEGER NOT NULL,"
                         + "description TEXT,"
-                        + "report_mode INTEGER NOT NULL,"
-                        + "report_target INTEGER,"
                         + "report_at TEXT,"
-                        + "report_from TEXT,"
-                        + "report_to TEXT,"
-                        + "timestamp TEXT"
+                        + "timestamp DATETIME DEFAULT CURRENT_TIMESTAMP"
                         + ")"
         );
 
-        db.execSQL("CREATE TABLE IF NOT EXISTS report_mode ("
+        db.execSQL("CREATE TABLE IF NOT EXISTS people ("
+                        + "pid INTEGER PRIMARY KEY,"
+                        + "name TEXT NOT NULL,"
+                        + "mobile TEXT,"
+                        + "line TEXT"
+                        + "timestamp DATETIME DEFAULT CURRENT_TIMESTAMP"
+                        + ")"
+        );
+
+        db.execSQL("CREATE TABLE IF NOT EXISTS report_method ("
                         + "rmid INTEGER PRIMARY KEY,"
                         + "description TEXT,"
                         + "mode TEXT,"
-                        + "timestamp TEXT"
+                        + "timestamp DATETIME DEFAULT CURRENT_TIMESTAMP"
                         + ")"
         );
 
-        db.execSQL("CREATE TABLE IF NOT EXISTS report_target ("
-                        + "rtid INTEGER PRIMARY KEY,"
-                        + "description TEXT,"
-                        + "target TEXT,"
-                        + "timestamp TEXT"
-                        + ")"
+        db.execSQL("INSERT INTO report_method"
+                        + "(description, mode)"
+                        + "VALUES"
+                        + "(`"+ R.string.report_via_sms + "`, `sms`)"
         );
+
+        db.execSQL("INSERT INTO report_method"
+                        + "(description, mode)"
+                        + "VALUES"
+                        + "(`"+ R.string.report_via_line + "`, `line`)"
+        );
+
     }
 
     @Override
